@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int i;
+    float val, largest, smallest;
+    printf("Enter 100 numbers:\n");
+    scanf("%f", &val);
+    largest = smallest = val;
+
+    for (i = 2; i <= 100; i++) {
+        scanf("%f", &val);
+        if (val > largest) largest = val;
+        if (val < smallest) smallest = val;
+    }
+    printf("Largest = %.2f\nSmallest = %.2f\n", largest, smallest);
+    return 0;
+}
