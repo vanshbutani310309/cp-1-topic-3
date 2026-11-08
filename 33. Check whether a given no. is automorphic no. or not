@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    long long n, temp, sq;
+    int digits = 0, divisor = 1;
+    printf("Enter a number: ");
+    scanf("%lld", &n);
+
+    sq = n * n;
+    temp = n;
+
+    // Count digits of n
+    while (temp > 0) {
+        digits++;
+        divisor *= 10;
+        temp /= 10;
+    }
+
+    if (n == 0) {
+        divisor = 10;
+    }
+
+    if (sq % divisor == n) {
+        printf("%lld is an Automorphic number (Square = %lld)\n", n, sq);
+    } else {
+        printf("%lld is not an Automorphic number (Square = %lld)\n", n, sq);
+    }
+
+    return 0;
+}
